@@ -20,8 +20,8 @@ public class SpawnObjectsWhenDestroyed : MonoBehaviour
     public int MinObjectsToSpawn = 2;
     public int MaxObjectsToSpawn = 3;
 
-    // Don't spawn objects if total scale is lower than this
-    public float SizeThresholdForSpawning = 0.5f;
+    //Size
+    public ObjectSpawnManager.SizeCategory Size;
 
     // Components
     private Transform mTransform = null;
@@ -42,14 +42,14 @@ public class SpawnObjectsWhenDestroyed : MonoBehaviour
             return;
 
         // Too small
-        if (mTransform.localScale.x < SizeThresholdForSpawning)
+        if (Size == ObjectSpawnManager.SizeCategory.Small)
             return;
 
         var numToSpawn = UnityEngine.Random.Range(MinObjectsToSpawn, MaxObjectsToSpawn);
 
         for (var i = 0; i < numToSpawn; ++i)
         {
-            spawnManager.SpawnAtSetPosition(mTransform);
+            spawnManager.SpawnAtSetPosition(transform.position, Size + 1);
         }
     }
 }

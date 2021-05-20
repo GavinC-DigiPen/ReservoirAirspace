@@ -16,17 +16,14 @@ using UnityEngine;
 public class ObjectSpawnManager : MonoBehaviour
 {
     // Public properties
-    public GameObject SpawnedObjectPrefab = null;
+    public GameObject[] SpawnedObjectPrefabs = null;
     public float MinObjectSpeed = 0.5f;
     public float MaxObjectSpeed = 1.5f;
-
-    // Largest asteroid size
-    public float BaseObjectSize = 2.0f;
-    public float SpawnScaleFactor = 0.6f;
 
     // Waves
     public int MaxWaveSize = 20;
     public int StartingWaveSize = 8;
+    public int CurrentWave = 0;
 
     // Other objects
     private Camera mCamera;
@@ -48,7 +45,7 @@ public class ObjectSpawnManager : MonoBehaviour
         LowerRight,
     }
 
-    private enum SizeCategory
+    public enum SizeCategory
     {
         Large,
         Medium,
@@ -83,42 +80,23 @@ public class ObjectSpawnManager : MonoBehaviour
         }
     }
 
+    // Spawns in a shark of a random size and at a random position
     void SpawnAtRandomPosition()
     {
-        // Calculate asteroid size
-        var spawnScale = CalculateSpawnScale();
+        // Calculate random asteroid size
+        var sizeCategory = (SizeCategory)Random.Range((int)SizeCategory.Large, (int)SizeCategory.Small);
 
         // Find corner outside bounds
-        var spawnPosition = CalculateSpawnPosition(spawnScale);
+        var spawnPosition = CalculateSpawnPosition(sizeCategory);
 
         // Spawn at position with base scale
-        SpawnAtSetPosition(spawnPosition, spawnScale);
+        SpawnAtSetPosition(spawnPosition, sizeCategory);
     }
 
-    private Vector3 CalculateSpawnScale()
+    // Calculate the spawn position that is off screen
+    private Vector3 CalculateSpawnPosition(SizeCategory sizeCategory)
     {
-        var sizeCategory = (SizeCategory)Random.Range((int)SizeCategory.Small, (int)SizeCategory.Large);
-        var spawnSize = BaseObjectSize;
-
-        switch(sizeCategory)
-        {
-            case SizeCategory.Large:
-                break;
-            case SizeCategory.Medium:
-                spawnSize *= SpawnScaleFactor;
-                break;
-            case SizeCategory.Small:
-                spawnSize *= SpawnScaleFactor * SpawnScaleFactor;
-                break;
-        }
-
-        var spawnScale = SpawnedObjectPrefab.transform.localScale * spawnSize;
-        return spawnScale;
-    }
-
-    private Vector3 CalculateSpawnPosition(Vector3 spawnScale)
-    {
-        var spawnExtents = spawnScale * 0.5f;
+        var spawnExtents =  new Vector2((int)sizeCategory * 0.5f, (int)sizeCategory * 0.5f);
 
         // Find corner outside bounds
         var spawnPosition = new Vector3();
@@ -146,19 +124,11 @@ public class ObjectSpawnManager : MonoBehaviour
         return spawnPosition;
     }
 
-    public void SpawnAtSetPosition(Transform transform)
-    {
-        var spawnScale = transform.localScale * SpawnScaleFactor;
-        SpawnAtSetPosition(transform.position, spawnScale);
-    }
 
-    public void SpawnAtSetPosition(Vector3 position, Vector3 scale)
+    public void SpawnAtSetPosition(Vector3 position, SizeCategory sizeCategory)
     {
         // Create object
-        var spawnedObject = Instantiate(SpawnedObjectPrefab, position, Quaternion.identity);
-
-        // Set object size
-        spawnedObject.transform.localScale = scale;
+        var spawnedObject = Instantiate(SpawnedObjectPrefabs[(int)sizeCategory], position, Quaternion.identity);
 
         // Random rotation
         var rotation = Random.Range(0.0f, 360.0f);
@@ -171,9 +141,14 @@ public class ObjectSpawnManager : MonoBehaviour
         rotation = Random.Range(0.0f, 360.0f * Mathf.Deg2Rad);
         var direction = new Vector3(Mathf.Cos(rotation), Mathf.Sin(rotation), 0);
 
+        //get move dirrection
+        Vector2 moveDirection = new Vector2(
+            Mathf.Cos(spawnedObject.transform.eulerAngles.z * Mathf.Deg2Rad),
+            Mathf.Sin(spawnedObject.transform.eulerAngles.z * Mathf.Deg2Rad));
+
         // Move object
         var body = spawnedObject.GetComponent<Rigidbody2D>();
-        body.velocity = direction * speed;
+        body.velocity = moveDirection * speed;
     }
 
     void SpawnNextWave()
@@ -185,5 +160,8 @@ public class ObjectSpawnManager : MonoBehaviour
 
         // Increase wave size if below max
         currentWaveSize = currentWaveSize < MaxWaveSize ? currentWaveSize + 1 : currentWaveSize;
+
+        // Increase what wave you are on
+        CurrentWave++;
     }
 }
