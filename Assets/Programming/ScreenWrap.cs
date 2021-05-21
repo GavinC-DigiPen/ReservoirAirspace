@@ -54,6 +54,7 @@ public class ScreenWrap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(mRenderer.isVisible);
         // Detect if object is outside viewport bounds
         if (mRenderer.isVisible)
             return;
@@ -61,11 +62,11 @@ public class ScreenWrap : MonoBehaviour
         Vector3 position = mTransform.position;
 
         // Wrap position
-        if(position.x < cameraMinX && mRigidbody.velocity.x < 0.0f)
+        if (position.x < cameraMinX && mRigidbody.velocity.x < 0.0f)
         {
             position.x = cameraMaxX + mTransform.localScale.x / 2.0f;
         }
-        else if(position.x > cameraMaxX && mRigidbody.velocity.x > 0.0f)
+        else if (position.x > cameraMaxX && mRigidbody.velocity.x > 0.0f)
         {
             position.x = cameraMinX - mTransform.localScale.x / 2.0f;
         }

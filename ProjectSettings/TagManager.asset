@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Asteroid
+  - Shark
+  - Music
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Player
   - PlayerProjectile
-  - Asteroid
+  - Shark
   - 
   - 
   - 

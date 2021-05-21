@@ -2,6 +2,7 @@
 //
 // File Name:	PlayerMovementController.cs
 // Author(s):	Jeremy Kings (j.kings)
+//              Gavin Cooper (gavin.cooper)
 // Project:		Asteroids
 // Course:		WANIC VGP
 //

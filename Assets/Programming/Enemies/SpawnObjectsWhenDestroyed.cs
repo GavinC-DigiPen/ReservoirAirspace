@@ -2,6 +2,7 @@
 //
 // File Name:	SpawnObjectsWhenDestroyed.cs
 // Author(s):	Jeremy Kings (j.kings)
+//              Gavin Cooper (gavin.cooper)
 // Project:		Asteroids
 // Course:		WANIC VGP
 //
@@ -17,7 +18,9 @@ using UnityEngine;
 public class SpawnObjectsWhenDestroyed : MonoBehaviour
 {
     // Public properties
+    [Tooltip("Minimum number of sharks to spawn when destroyed")]
     public int MinObjectsToSpawn = 2;
+    [Tooltip("Maximum number of sharks to spawn when destroyed")]
     public int MaxObjectsToSpawn = 3;
 
     //Size
@@ -36,20 +39,28 @@ public class SpawnObjectsWhenDestroyed : MonoBehaviour
         spawnManager = FindObjectOfType<ObjectSpawnManager>();
     }
 
+    // Sometimes summon more sharks when destoryed
     private void OnCollisionExit2D(Collision2D collision)
     {
+        // Check that the ObjectSpawnManager exists
         if (mTransform == null)
+        {
             return;
+        }
 
-        // Too small
+        // Check if it at the smallest size and doesnt need to spawn more
         if (Size == ObjectSpawnManager.SizeCategory.Small)
+        {
             return;
+        }
 
+        // Get a random number of how many sharks should be spawned in
         var numToSpawn = UnityEngine.Random.Range(MinObjectsToSpawn, MaxObjectsToSpawn);
 
+        // Spawn in sharks
         for (var i = 0; i < numToSpawn; ++i)
         {
-            spawnManager.SpawnAtSetPosition(transform.position, Size + 1);
+            spawnManager.SpawnSharkAtSetPosition(transform.position, Size + 1);
         }
     }
 }

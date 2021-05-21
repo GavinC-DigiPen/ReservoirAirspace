@@ -14,11 +14,12 @@ GameObject:
   - component: {fileID: 1803370620779188948}
   - component: {fileID: 6046975222712969598}
   - component: {fileID: 2069553680734708172}
+  - component: {fileID: 8417435282783186203}
   - component: {fileID: -2778174407405668588}
   - component: {fileID: -6793514599948381963}
   m_Layer: 10
   m_Name: (1) Medium
-  m_TagString: Asteroid
+  m_TagString: Shark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,6 +150,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8e5eceeb27e8f4d94be009148dab28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8417435282783186203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6046975222712969571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ae3d38968af0243ba21442bb1f784b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinObjectSpeed: 1
+  MaxObjectSpeed: 1.75
 --- !u!114 &-2778174407405668588
 MonoBehaviour:
   m_ObjectHideFlags: 0
