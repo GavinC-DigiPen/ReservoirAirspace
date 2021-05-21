@@ -54,6 +54,12 @@ public class SpawnObjectsWhenDestroyed : MonoBehaviour
             return;
         }
 
+        // Check if it dirrectly collided with the player
+        if (collision.gameObject.tag == "Player")
+        {
+            return;
+        }
+
         // Get a random number of how many sharks should be spawned in
         var numToSpawn = UnityEngine.Random.Range(MinObjectsToSpawn, MaxObjectsToSpawn);
 

@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿//------------------------------------------------------------------------------
+//
+// File Name:	ObjectSpeedController.cs
+// Author(s):	Gavin Cooper (gavin.cooper)
+// Project:		Asteroids
+// Course:		WANIC VGP
+//
+// Copyright © 2021 DigiPen (USA) Corporation.
+//
+//------------------------------------------------------------------------------
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
