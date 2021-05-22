@@ -54,7 +54,6 @@ public class ScreenWrap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(mRenderer.isVisible);
         // Detect if object is outside viewport bounds
         if (mRenderer.isVisible)
             return;

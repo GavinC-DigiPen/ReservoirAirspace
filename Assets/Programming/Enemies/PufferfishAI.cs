@@ -20,6 +20,10 @@ public class PufferfishAI : MonoBehaviour
     public float RotationSpeed = 0.5f;
     public float MoveSpeed = 0.5f;
 
+    public GameObject Spine;
+    public int NumberOfSpines = 8;
+    public float SpineSpeed = 1;
+
     private Transform mTransform;
     private Rigidbody2D body;
 
@@ -50,5 +54,55 @@ public class PufferfishAI : MonoBehaviour
 
         // Move object
         body.velocity = moveDirection * MoveSpeed;
+    }
+
+    // pufferfish collide
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        // Check if it dirrectly collided with the player
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Explode();
+    }
+
+    // When pufferfish in in range
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if player
+        if (collision.gameObject.tag != "Player")
+        {
+            return;
+        }
+
+        Explode();
+    }
+
+    void Explode()
+    {
+        //turn off hit box
+        GetComponent<PolygonCollider2D>().enabled = false;
+
+        for (int i = 0; i < NumberOfSpines; i++)
+        {
+            // Spawn objet
+            var spawnedObject = Instantiate(Spine, transform.position, Quaternion.identity);
+
+            // Rotate object
+            spawnedObject.transform.rotation = Quaternion.AngleAxis((float)360 / (float)NumberOfSpines * (float)i, Vector3.forward);
+
+            // Get move dirrection
+            Vector2 moveDirection = new Vector2(
+                Mathf.Cos(spawnedObject.gameObject.GetComponent<Transform>().eulerAngles.z * Mathf.Deg2Rad),
+                Mathf.Sin(spawnedObject.gameObject.GetComponent<Transform>().eulerAngles.z * Mathf.Deg2Rad));
+
+            // Move object
+            spawnedObject.gameObject.GetComponent<Rigidbody2D>().velocity = moveDirection * SpineSpeed;
+        }
+
+        Destroy(gameObject);
     }
 }
