@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shark
   - Music
+  - Player Projectile
   layers:
   - Default
   - TransparentFX
