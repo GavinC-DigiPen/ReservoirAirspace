@@ -16,17 +16,23 @@ using UnityEngine;
 
 public class ObjectSpawnManager : MonoBehaviour
 {
-    // Public properties
+    // Prefabs
     [Tooltip("The 3 prefabs of diffrent sizes, the first one is Large, last one is Small")]
     public GameObject[] SpawnedObjectPrefabs = null;
-
-    // Waves
     [Tooltip("Largest wave size")]
     public int MaxWaveSize = 20;
     [Tooltip("Starting wave size")]
     public int StartingWaveSize = 8;
-    [Tooltip("What wave it is currently")]
-    public int CurrentWave = 0;
+
+    [Tooltip("The pufferfish prefab.")]
+    public GameObject PufferfishPrefab = null;
+    [Tooltip("How many pufferfish are their to start")]
+    public int NumOfPufferfish = 1;
+    [Tooltip("How often does the number of pufferfish increase.")]
+    public int FrequencyOfPufferfish = 2;
+
+    //[Tooltip("What wave it is currently")]
+    int CurrentWave = 0;
 
     // Other objects
     private Camera mCamera;
@@ -47,6 +53,14 @@ public class ObjectSpawnManager : MonoBehaviour
         LowerLeft,
         LowerRight,
     }
+    private enum SpawnSide
+    {
+        Up,
+        Right,
+        Down,
+        Left,
+    }
+
 
     public enum SizeCategory
     {
@@ -101,9 +115,22 @@ public class ObjectSpawnManager : MonoBehaviour
     // Creates all the objects for the wave
     void SpawnNextWave()
     {
+        // Spawn in sharks
         for (var i = 0; i < currentWaveSize; ++i)
         {
             SpawnRandomShark();
+        }
+
+        // Check if pufferfish spawn amount need to increase
+        if (CurrentWave % FrequencyOfPufferfish == 0 && CurrentWave != 0)
+        {
+            NumOfPufferfish++;
+        }
+
+        // Spawn in pufferfish
+        for (var i = 0; i < NumOfPufferfish; i++)
+        {
+            SpawnRandomPufferfish();
         }
 
         // Increase wave size if below max
@@ -112,6 +139,9 @@ public class ObjectSpawnManager : MonoBehaviour
         // Increase what wave you are on
         CurrentWave++;
     }
+
+
+
 
 
     // Spawns in a shark of a random size and at a random position
@@ -128,7 +158,7 @@ public class ObjectSpawnManager : MonoBehaviour
     }
 
 
-    // Calculate the spawn position that is off screen
+    // Calculate the spawn position that is off screen (Shark)
     private Vector3 CalculateRandomSharkSpawnPosition(SizeCategory sizeCategory)
     {
         var spawnExtents =  new Vector2((int)sizeCategory * 0.5f, (int)sizeCategory * 0.5f);
@@ -159,12 +189,66 @@ public class ObjectSpawnManager : MonoBehaviour
         return spawnPosition;
     }
 
-
-    // Create object and set up it's rotation (speed is controlled on the prefab)
+    // Create a shark and set up it's rotation (speed is controlled on the prefab)
     public void SpawnSharkAtSetPosition(Vector3 position, SizeCategory sizeCategory)
     {
         // Create object
         var spawnedObject = Instantiate(SpawnedObjectPrefabs[(int)sizeCategory], position, Quaternion.identity);
+
+        // Random rotation
+        var rotation = Random.Range(0.0f, 360.0f);
+        spawnedObject.transform.eulerAngles = new Vector3(0, 0, rotation);
+    }
+
+
+
+
+    // Spawns in a pufferfish at a random location
+    void SpawnRandomPufferfish()
+    {
+        // Find side outside bounds
+        var spawnPosition = CalculateRandomPufferfishSpawnPosition();
+
+        // Spawn at position with base scale
+        SpawnPufferfishAtSetPosition(spawnPosition);
+    }
+
+    // Calculate the spawn position that is off screen (Pufferfish)
+    private Vector3 CalculateRandomPufferfishSpawnPosition()
+    {
+        var spawnExtents = new Vector2(1, 1);
+
+        // Find corner outside bounds
+        var spawnPosition = new Vector3();
+        var side = (SpawnSide)Random.Range((int)SpawnSide.Up, (int)SpawnSide.Left);
+        switch (side)
+        {
+            case SpawnSide.Up:
+                spawnPosition.x = 0;
+                spawnPosition.y = cameraMaxY + spawnExtents.y;
+                break;
+            case SpawnSide.Right:
+                spawnPosition.x = cameraMaxX + spawnExtents.x;
+                spawnPosition.y = 0;
+                break;
+            case SpawnSide.Down:
+                spawnPosition.x = 0;
+                spawnPosition.y = cameraMinY - spawnExtents.y;
+                break;
+            case SpawnSide.Left:
+                spawnPosition.x = cameraMinX - spawnExtents.x;
+                spawnPosition.y = 0;
+                break;
+        }
+
+        return spawnPosition;
+    }
+
+    // Create pufferfish and set up it's rotation (movement is controlled on the prefab)
+    public void SpawnPufferfishAtSetPosition(Vector3 position)
+    {
+        // Create object
+        var spawnedObject = Instantiate(PufferfishPrefab, position, Quaternion.identity);
 
         // Random rotation
         var rotation = Random.Range(0.0f, 360.0f);

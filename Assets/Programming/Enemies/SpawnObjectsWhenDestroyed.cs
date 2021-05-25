@@ -23,6 +23,8 @@ public class SpawnObjectsWhenDestroyed : MonoBehaviour
     [Tooltip("Maximum number of sharks to spawn when destroyed")]
     public int MaxObjectsToSpawn = 3;
 
+    int ObjectSpawnCounter = 0;
+
     //Size
     public ObjectSpawnManager.SizeCategory Size;
 
@@ -61,10 +63,10 @@ public class SpawnObjectsWhenDestroyed : MonoBehaviour
         }
 
         // Get a random number of how many sharks should be spawned in
-        var numToSpawn = UnityEngine.Random.Range(MinObjectsToSpawn, MaxObjectsToSpawn);
+        var numToSpawn = UnityEngine.Random.Range(MinObjectsToSpawn, MaxObjectsToSpawn + 1);
 
         // Spawn in sharks
-        for (var i = 0; i < numToSpawn; ++i)
+        for (; ObjectSpawnCounter < numToSpawn; ++ObjectSpawnCounter)
         {
             spawnManager.SpawnSharkAtSetPosition(transform.position, Size + 1);
         }

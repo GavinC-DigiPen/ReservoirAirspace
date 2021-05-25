@@ -15,22 +15,31 @@ using UnityEngine;
 
 public class PufferfishAI : MonoBehaviour
 {
-    [Tooltip("The object the pufferfish is targeting")]
-    public GameObject Target;
+    [Tooltip("The tag of the object the pufferfish is targeting")]
+    public string TargetTag = "Player";
+    [Tooltip("Rotation speed of pufferfish")]
     public float RotationSpeed = 0.5f;
-    public float MoveSpeed = 0.5f;
+    [Tooltip("Minimum speed of pufferfish")]
+    public float MinPufferfishSpeed = 0.75f;
+    [Tooltip("Maximum speed of pufferfish")]
+    public float MaxPufferfishSpeed = 2;
 
+    [Tooltip("Prefab for the spines")]
     public GameObject Spine;
+    [Tooltip("Number of spines to spawn in")]
     public int NumberOfSpines = 8;
+    [Tooltip("Speed of spines")]
     public float SpineSpeed = 1;
 
+    private GameObject Target;
     private Transform mTransform;
     private Rigidbody2D body;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Get Transform
+        // Get things
+        Target = GameObject.FindGameObjectWithTag(TargetTag);
         mTransform = GetComponent<Transform>();
         body = GetComponent<Rigidbody2D>();
     }
@@ -52,8 +61,11 @@ public class PufferfishAI : MonoBehaviour
             Mathf.Cos(mTransform.eulerAngles.z * Mathf.Deg2Rad),
             Mathf.Sin(mTransform.eulerAngles.z * Mathf.Deg2Rad));
 
+        // Random speed
+        var speed = Random.Range(MinPufferfishSpeed, MaxPufferfishSpeed);
+
         // Move object
-        body.velocity = moveDirection * MoveSpeed;
+        body.velocity = moveDirection * speed;
     }
 
     // pufferfish collide

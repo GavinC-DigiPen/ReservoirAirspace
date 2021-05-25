@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ae3d38968af0243ba21442bb1f784b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinObjectSpeed: 1.25
-  MaxObjectSpeed: 2
+  MinObjectSpeed: 2
+  MaxObjectSpeed: 2.25
 --- !u!114 &-2778174407405668588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,8 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490eb42279988d44798ea0fc99d73622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinObjectsToSpawn: 2
-  MaxObjectsToSpawn: 3
+  MinObjectsToSpawn: 0
+  MaxObjectsToSpawn: 0
   Size: 2
 --- !u!114 &-6793514599948381963
 MonoBehaviour:
