@@ -16,6 +16,7 @@ using UnityEngine;
 public class PlayerShootingController : MonoBehaviour
 {
     public GameObject ProjectilePrefab = null;
+    public Vector2 ProjectileOffset;
     public float ShootDelay = 0.5f;
     public float ProjectileSpeed = 2.0f;
     public KeyCode ShootKey = KeyCode.Space;
@@ -52,8 +53,7 @@ public class PlayerShootingController : MonoBehaviour
         // Nudge slightly ahead of ship
         var rotation = mTransform.eulerAngles.z * Mathf.Deg2Rad;
         var direction = new Vector3(Mathf.Cos(rotation), Mathf.Sin(rotation), 0.0f);
-        spawnPosition += direction * (mTransform.localScale.x / 2.0f
-            + ProjectilePrefab.transform.localScale.x / 2.0f);
+        spawnPosition += direction * (ProjectileOffset.x + ProjectileOffset.y);
 
         // Create object
         var projectile = GameObject.Instantiate(ProjectilePrefab, spawnPosition, mTransform.rotation);

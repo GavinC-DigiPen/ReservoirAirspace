@@ -49,11 +49,12 @@ MonoBehaviour:
   - {fileID: 6046975222712969571, guid: aa5c87381667fa44487b9ab00b4286ff, type: 3}
   - {fileID: 6046975222712969571, guid: a04f298e9545c5a4ea3a0267ba926420, type: 3}
   - {fileID: 6046975222712969571, guid: fd050abb713b6cb42999b2392089e207, type: 3}
-  MinObjectSpeed: 0.7
-  MaxObjectSpeed: 1.5
   MaxWaveSize: 20
   StartingWaveSize: 8
-  CurrentWave: 0
+  PufferfishPrefab: {fileID: 4373100500133517634, guid: b04fde2d23a91994980e71b83e44f1ac,
+    type: 3}
+  NumOfPufferfish: 1
+  FrequencyOfPufferfish: 2
 --- !u!82 &6290884503859100519
 AudioSource:
   m_ObjectHideFlags: 0
