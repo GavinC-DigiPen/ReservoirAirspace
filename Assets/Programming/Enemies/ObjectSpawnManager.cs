@@ -31,8 +31,8 @@ public class ObjectSpawnManager : MonoBehaviour
     [Tooltip("How often does the number of pufferfish increase.")]
     public int FrequencyOfPufferfish = 2;
 
-    //[Tooltip("What wave it is currently")]
-    int CurrentWave = 0;
+    [Tooltip("What wave it is currently")]
+    public int CurrentWave = 0;
 
     // Other objects
     private Camera mCamera;
