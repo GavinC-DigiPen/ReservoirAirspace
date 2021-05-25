@@ -690,6 +690,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip
       objectReference: {fileID: 0}
+    - target: {fileID: 2070967342736071680, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2070967342736071686, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8648,6 +8653,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SpawnScaleFactor
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290884503859100505, guid: c56f8ab5b68bcd34dae24a4db359a1a2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6290884503859100518, guid: c56f8ab5b68bcd34dae24a4db359a1a2,
         type: 3}
