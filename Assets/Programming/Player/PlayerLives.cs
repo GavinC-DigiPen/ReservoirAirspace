@@ -20,7 +20,7 @@ public class PlayerLives : MonoBehaviour
     {
         if (Lives > 0)
         {
-            if (collision.gameObject.CompareTag("Shark"))
+            if (!collision.gameObject.CompareTag("Player Projectile"))
             {
                 Lives--;
             }
