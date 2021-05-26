@@ -36,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 2070967342736071680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.7}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.7}
   m_Children:
   - {fileID: 6145361491386871863}
   m_Father: {fileID: 0}
@@ -81,9 +81,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -2049098895371207368, guid: 2512e0ce0fa650f49a2ff36b0b5b7d00,
+  m_Sprite: {fileID: -9060967865989327711, guid: 2cc238c608db25244ae5332c078896b2,
     type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,7 +131,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 2.56}
+    oldSize: {x: 5.12, y: 2.55}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -330,8 +330,8 @@ MonoBehaviour:
     type: 3}
   ClipToPlay: {fileID: 8300000, guid: 4e1e5bb67ab14a04ab908e215174eab6, type: 3}
   EffectMaxDistance: 1
-  EffectInterval: 0.5
-  EffectScaleMultiplier: 2
+  EffectInterval: 1
+  EffectScaleMultiplier: 1
   EffectStartColor: {r: 1, g: 0.7745887, b: 0.109803915, a: 1}
   ClipVolumeMultiplier: 0.5
 --- !u!114 &7723774846159632759
@@ -463,9 +463,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: be3911b8b1682434e80f5ed49be30541, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
