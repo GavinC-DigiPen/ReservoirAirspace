@@ -18,8 +18,8 @@ GameObject:
   - component: {fileID: 2070967342736071685}
   - component: {fileID: 2757521452979052217}
   - component: {fileID: 2070967342736071705}
-  - component: {fileID: 3879183974202223086}
   - component: {fileID: 7723774846159632759}
+  - component: {fileID: 3879183974202223086}
   m_Layer: 8
   m_Name: PlayerShip
   m_TagString: Player
@@ -334,6 +334,47 @@ MonoBehaviour:
   EffectScaleMultiplier: 2
   EffectStartColor: {r: 1, g: 0.7745887, b: 0.109803915, a: 1}
   ClipVolumeMultiplier: 0.5
+--- !u!114 &7723774846159632759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070967342736071680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e63164f02603e4abb1dab1c7c1944e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lives: 3
+  OnHit:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2070967342736071705}
+        m_MethodName: SpawnEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeath:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2070967342736071705}
+        m_MethodName: Disabled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &3879183974202223086
 Animator:
   serializedVersion: 3
@@ -353,22 +394,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7723774846159632759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070967342736071680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38e63164f02603e4abb1dab1c7c1944e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lives: 3
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &3780906521255156640
 GameObject:
   m_ObjectHideFlags: 0

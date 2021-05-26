@@ -71,7 +71,7 @@ public class RestartOnCollision : MonoBehaviour
         }
     }
 
-    private void SpawnEffect()
+    public void SpawnEffect()
     {
         // Move spawn position in random direction
         var position = mTransform.position;
