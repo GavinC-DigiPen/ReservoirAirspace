@@ -313,6 +313,7 @@ MonoBehaviour:
   EffectScaleMultiplier: 1
   EffectStartColor: {r: 1, g: 0.7745887, b: 0.109803915, a: 1}
   ClipVolumeMultiplier: 0.5
+  SceneToGoTo: DeathScreen
 --- !u!114 &7723774846159632759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +345,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2070967342736071705}
-        m_MethodName: Disabled
+        m_MethodName: Die
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

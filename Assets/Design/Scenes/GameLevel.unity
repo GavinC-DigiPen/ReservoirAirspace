@@ -2579,6 +2579,11 @@ PrefabInstance:
       propertyPath: ProjectileSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2070967342736071705, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
+        type: 3}
+      propertyPath: SceneToGoTo
+      value: DeathScreen
+      objectReference: {fileID: 0}
     - target: {fileID: 2070967342736071707, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[1].Array.size

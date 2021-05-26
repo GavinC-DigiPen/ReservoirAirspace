@@ -1,7 +1,8 @@
 ﻿//------------------------------------------------------------------------------
 //
-// File Name:	RestartOnCollision.cs
+// File Name:	DeathController.cs
 // Author(s):	Jeremy Kings (j.kings)
+//              Gavin Cooper (cooper.gavin)
 // Project:		Asteroids
 // Course:		WANIC VGP
 //
@@ -14,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RestartOnCollision : MonoBehaviour
+public class DeathController : MonoBehaviour
 {
     // Public properties
     public float TimeUntilRestart = 3.0f;
@@ -27,6 +28,7 @@ public class RestartOnCollision : MonoBehaviour
     public float EffectScaleMultiplier = 2.0f;
     public Color EffectStartColor = Color.white;
     public float ClipVolumeMultiplier = 0.5f;
+    public string SceneToGoTo = "DeathScene";
 
     // Components
     PlayerMovementController movement = null;
@@ -57,7 +59,7 @@ public class RestartOnCollision : MonoBehaviour
         {
             if(timer > TimeUntilRestart)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(SceneToGoTo);
             }
 
             if(effectTimer > EffectInterval)
@@ -105,7 +107,7 @@ public class RestartOnCollision : MonoBehaviour
         }
     }
 
-    public void Disabled()
+    public void Die()
     {
         hasCollided = true;
 
