@@ -703,12 +703,12 @@ PrefabInstance:
     - target: {fileID: 2070967342736071685, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
         type: 3}
       propertyPath: DecelerationAmount
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2070967342736071685, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
         type: 3}
       propertyPath: MoveSpeedMax
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2070967342736071685, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
         type: 3}
@@ -778,6 +778,16 @@ PrefabInstance:
     - target: {fileID: 2070967342736071704, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
         type: 3}
       propertyPath: AddPlayerMoveSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070967342736071704, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
+        type: 3}
+      propertyPath: ProjectileSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070967342736071705, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2070967342736071707, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
@@ -8674,6 +8684,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[29].Array.data[5].y
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723774846159632759, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e6d99a5ed473aa45961bd9ab56a3dd9, type: 3}
