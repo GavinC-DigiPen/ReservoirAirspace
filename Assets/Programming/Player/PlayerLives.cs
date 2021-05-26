@@ -14,9 +14,9 @@ public class PlayerLives : MonoBehaviour
     [Tooltip("The amount of hits the player can take before they die")]
     public int Lives = 3;
     [Tooltip("A list of functions to run when hit")]
-    public UnityEvent[] OnHit;
+    public UnityEvent OnHit;
     [Tooltip("A list of functions to run when dead (Lives == 0)")]
-    public UnityEvent[] OnDeath;
+    public UnityEvent OnDeath;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -27,19 +27,21 @@ public class PlayerLives : MonoBehaviour
                 Lives--;
 
                 //invoke events
-                for (int i = 0; i < OnHit.Length; i++)
-                {
-                    OnHit[i].Invoke();
-                }
+                OnHit.Invoke();
+                //for (int i = 0; i < OnHit.Length; i++)
+                //{
+                //    OnHit[i].Invoke();
+                //}
             }
             //if at zero, execute functions
             if (Lives == 0)
-            {             
+            {
                 //invoke events
-                for (int i = 0; i < OnDeath.Length; i++)
-                {
-                    OnDeath[i].Invoke();
-                }
+                OnDeath.Invoke();
+                //for (int i = 0; i < OnDeath.Length; i++)
+                //{
+                //    OnDeath[i].Invoke();
+                //}
             }
 
         }
