@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectPrefab: {fileID: 1476684567254845148, guid: 0baa11af58bec284b97d1f91022c3d7f,
     type: 3}
-  ClipToPlay: {fileID: 8300000, guid: 01a2e7d8c478e3541bf8ee081fe8f59b, type: 3}
+  ClipToPlay: {fileID: 8300000, guid: c35a3d16cdc556d498a12a6862e5ae69, type: 3}
   ScaleEffectFromSource: 1
   BaseScaleMultiplier: 1
   StartColor: {r: 0.9913361, g: 1, b: 0.8352941, a: 1}
