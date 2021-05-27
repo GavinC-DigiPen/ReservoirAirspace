@@ -96,7 +96,7 @@ public class PufferfishAI : MonoBehaviour
     void Explode()
     {
         //turn off hit box
-        GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
 
         for (int i = 0; i < NumberOfSpines; i++)
         {

@@ -17,18 +17,34 @@ using UnityEngine.Animations;
 public class PlayerAnimatorController : MonoBehaviour
 {
     private Animator PlayerAnim;
+    private PlayerLives PlayerLives;
 
     private void Start()
     {
         // Get player animator
         PlayerAnim = GetComponent<Animator>();
+        PlayerLives = GetComponent<PlayerLives>();
 
         // Make sure goldfish isnt dead at the start
         PlayerAnim.SetBool("GoldfishDead", false);
+        PlayerAnim.SetBool("GoldfishHurt", false);
+    }
+
+    // Hurt goldfish
+    public void ChangeGoldfishHurt()
+    {
+        PlayerAnim.SetBool("GoldfishHurt", true);
+        Invoke("UnHurtGoldfish", PlayerLives.ImmuneTime);
+    }
+
+    // Unhurt goldfish
+    public void UnHurtGoldfish()
+    {
+        PlayerAnim.SetBool("GoldfishHurt", false);
     }
 
     // Function to set if goldfish is dead or not
-    public void ChangeGoldfishDeathAnimatorVariable(bool Dead)
+    public void ChangeGoldfishDeath(bool Dead)
     {
         PlayerAnim.SetBool("GoldfishDead", Dead);
     }

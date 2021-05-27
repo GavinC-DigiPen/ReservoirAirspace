@@ -15,6 +15,8 @@ using UnityEngine;
 
 public class DestroyIfNotVisible : MonoBehaviour
 {
+    public float Delay = 0;
+
     private SpriteRenderer mRenderer = null;
 
     // Start is called before the first frame update
@@ -31,6 +33,6 @@ public class DestroyIfNotVisible : MonoBehaviour
             return;
 
         // Destroy the object
-        Destroy(gameObject);
+        Destroy(gameObject, Delay);
     }
 }

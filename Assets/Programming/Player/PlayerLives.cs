@@ -13,35 +13,34 @@ public class PlayerLives : MonoBehaviour
 {
     [Tooltip("The amount of hits the player can take before they die")]
     public int Lives = 3;
+    [Tooltip("The amount of time you are immune after getting hit")]
+    public float ImmuneTime = 1;
     [Tooltip("A list of functions to run when hit")]
     public UnityEvent OnHit;
     [Tooltip("A list of functions to run when dead (Lives == 0)")]
     public UnityEvent OnDeath;
 
+    private float ImmuneTimer = 0;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (Lives > 0)
         {
-            if (!collision.gameObject.CompareTag("Player Projectile"))
+            if (ImmuneTimer > ImmuneTime)
             {
+                //remove life, set immune timer
                 Lives--;
+                ImmuneTimer = 0;
 
                 //invoke events
                 OnHit.Invoke();
-                //for (int i = 0; i < OnHit.Length; i++)
-                //{
-                //    OnHit[i].Invoke();
-                //}
             }
+
             //if at zero, execute functions
             if (Lives == 0)
             {
                 //invoke events
                 OnDeath.Invoke();
-                //for (int i = 0; i < OnDeath.Length; i++)
-                //{
-                //    OnDeath[i].Invoke();
-                //}
             }
 
         }
@@ -56,5 +55,7 @@ public class PlayerLives : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //increase immune timer
+        ImmuneTimer += Time.deltaTime;
     }
 }
