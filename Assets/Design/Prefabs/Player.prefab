@@ -307,7 +307,7 @@ MonoBehaviour:
   TimeUntilRestart: 3
   EffectPrefab: {fileID: 1476684567254845148, guid: 0baa11af58bec284b97d1f91022c3d7f,
     type: 3}
-  ClipToPlay: {fileID: 8300000, guid: 4e1e5bb67ab14a04ab908e215174eab6, type: 3}
+  ClipToPlay: {fileID: 8300000, guid: a2b5ed207e17310428319020f1c201e7, type: 3}
   EffectMaxDistance: 1
   EffectInterval: 1
   EffectScaleMultiplier: 1
