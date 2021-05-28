@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Delay: 0
+  MakeInvisible: 1
 --- !u!114 &6080057703794152333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b60f2e235f5d964196e5d58c8185f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeUntilDestroyed: 20
+  TimeUntilDestroyed: 30
 --- !u!95 &8577225361397599767
 Animator:
   serializedVersion: 3

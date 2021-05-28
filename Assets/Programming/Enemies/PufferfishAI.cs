@@ -40,6 +40,7 @@ public class PufferfishAI : MonoBehaviour
     private AudioSource myAudio;
 
     private bool Exploding = false;
+    private int ObjectSpawnCounter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -122,17 +123,16 @@ public class PufferfishAI : MonoBehaviour
     private void SpawnSpines()
     {
         //audio
-        myAudio.clip = ExplosionSound;
-        myAudio.Play();
+        Invoke("PlaySound", 0.5f);
 
         //spawn spines
-        for (int i = 0; i < NumberOfSpines; i++)
+        for (; ObjectSpawnCounter < NumberOfSpines; ObjectSpawnCounter++)
         {
             // Spawn objet
             var spawnedObject = Instantiate(Spine, transform.position, Quaternion.identity);
 
             // Rotate object
-            spawnedObject.transform.rotation = Quaternion.AngleAxis((float)360 / (float)NumberOfSpines * (float)i, Vector3.forward);
+            spawnedObject.transform.rotation = Quaternion.AngleAxis((float)360 / (float)NumberOfSpines * (float)ObjectSpawnCounter, Vector3.forward);
 
             // Get move dirrection
             Vector2 moveDirection = new Vector2(
@@ -145,5 +145,12 @@ public class PufferfishAI : MonoBehaviour
 
         // destory self
         Destroy(gameObject, 2);
+    }
+
+    private void PlaySound()
+    {
+        //audio
+        myAudio.clip = ExplosionSound;
+        myAudio.Play();
     }
 }

@@ -64,11 +64,19 @@ public class MenuButtonLogic : MonoBehaviour
 
     private void Play()
     {
+        Invoke("PlayNow", 0.5f);
+    }
+
+    private void PlayNow()
+    {
         SceneManager.LoadScene("GameLevel");
     }
 
-
     private void Exit()
+    {
+        Invoke("ExitNow", 0.5f);
+    }
+    private void ExitNow()
     {
 #if UNITY_EDITOR
         // Application.Quit() does not work in the editor so

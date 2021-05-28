@@ -68,7 +68,7 @@ MonoBehaviour:
 
     Zach'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85bdd586b04f02e43bce1b67ab66a6b3, type: 2}
   m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -201,7 +201,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Copyright \xA9 2021 DigiPen (USA) Corporation."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85bdd586b04f02e43bce1b67ab66a6b3, type: 2}
   m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -477,7 +477,7 @@ MonoBehaviour:
 
     Luc'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85bdd586b04f02e43bce1b67ab66a6b3, type: 2}
   m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -611,7 +611,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Music/Sound
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85bdd586b04f02e43bce1b67ab66a6b3, type: 2}
   m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -744,7 +744,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: CREDITS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85bdd586b04f02e43bce1b67ab66a6b3, type: 2}
   m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -875,11 +875,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Madeline
+  m_text: 'Maddy
 
     Makayla'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85bdd586b04f02e43bce1b67ab66a6b3, type: 2}
   m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
+  m_fontSize: 60
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -1013,7 +1013,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Programing
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85bdd586b04f02e43bce1b67ab66a6b3, type: 2}
   m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1147,7 +1147,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Art
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85bdd586b04f02e43bce1b67ab66a6b3, type: 2}
   m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

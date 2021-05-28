@@ -24,6 +24,7 @@ public class PlaySound : MonoBehaviour
     void Start()
     {
         myAudio = GetComponent<AudioSource>();
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
