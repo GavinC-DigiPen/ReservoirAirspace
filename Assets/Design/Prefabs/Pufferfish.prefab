@@ -168,6 +168,7 @@ MonoBehaviour:
   RotationSpeed: 2
   MinPufferfishSpeed: 0.75
   MaxPufferfishSpeed: 2
+  ExplosionSound: {fileID: 8300000, guid: 9caf89225a9697b4da1e51e26180c53a, type: 3}
   Spine: {fileID: 8144791440989977380, guid: 767a7765a36e561469e173799f0865e8, type: 3}
   NumberOfSpines: 6
   SpineSpeed: 1
