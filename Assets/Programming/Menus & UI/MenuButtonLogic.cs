@@ -67,6 +67,7 @@ public class MenuButtonLogic : MonoBehaviour
         SceneManager.LoadScene("GameLevel");
     }
 
+
     private void Exit()
     {
 #if UNITY_EDITOR
