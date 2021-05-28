@@ -324,8 +324,8 @@ MonoBehaviour:
   PauseMenu:
   - {fileID: 1181402390}
   - {fileID: 535014285}
-  PauseSound: {fileID: 0}
-  UnPauseSound: {fileID: 0}
+  PauseSound: {fileID: 8300000, guid: dfb9a76c7c1ff2645add6c1b35e40a6e, type: 3}
+  UnPauseSound: {fileID: 8300000, guid: 41c321b2daa8e2d4a8973c149d57e4a8, type: 3}
 --- !u!82 &215639613
 AudioSource:
   m_ObjectHideFlags: 0
