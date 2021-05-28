@@ -20,19 +20,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -6572671962469466566, guid: 1cb09e8f8809c7b43b84eba85c06debc,
+      value: {fileID: 1501673041189097285, guid: b5193cccbd24ed241aa9e24f5a334073,
         type: 3}
     - time: 0.25
-      value: {fileID: -7947454541259792208, guid: 1cb09e8f8809c7b43b84eba85c06debc,
+      value: {fileID: 8852837911673598089, guid: b5193cccbd24ed241aa9e24f5a334073,
         type: 3}
     - time: 0.5
-      value: {fileID: -2473487059193846117, guid: 1cb09e8f8809c7b43b84eba85c06debc,
+      value: {fileID: 494655820200609072, guid: b5193cccbd24ed241aa9e24f5a334073,
         type: 3}
     - time: 0.75
-      value: {fileID: -5468336420300929468, guid: 1cb09e8f8809c7b43b84eba85c06debc,
+      value: {fileID: -8894402054480145821, guid: b5193cccbd24ed241aa9e24f5a334073,
         type: 3}
     - time: 1
-      value: {fileID: -6572671962469466566, guid: 1cb09e8f8809c7b43b84eba85c06debc,
+      value: {fileID: 1501673041189097285, guid: b5193cccbd24ed241aa9e24f5a334073,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -53,11 +53,11 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -6572671962469466566, guid: 1cb09e8f8809c7b43b84eba85c06debc, type: 3}
-    - {fileID: -7947454541259792208, guid: 1cb09e8f8809c7b43b84eba85c06debc, type: 3}
-    - {fileID: -2473487059193846117, guid: 1cb09e8f8809c7b43b84eba85c06debc, type: 3}
-    - {fileID: -5468336420300929468, guid: 1cb09e8f8809c7b43b84eba85c06debc, type: 3}
-    - {fileID: -6572671962469466566, guid: 1cb09e8f8809c7b43b84eba85c06debc, type: 3}
+    - {fileID: 1501673041189097285, guid: b5193cccbd24ed241aa9e24f5a334073, type: 3}
+    - {fileID: 8852837911673598089, guid: b5193cccbd24ed241aa9e24f5a334073, type: 3}
+    - {fileID: 494655820200609072, guid: b5193cccbd24ed241aa9e24f5a334073, type: 3}
+    - {fileID: -8894402054480145821, guid: b5193cccbd24ed241aa9e24f5a334073, type: 3}
+    - {fileID: 1501673041189097285, guid: b5193cccbd24ed241aa9e24f5a334073, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
