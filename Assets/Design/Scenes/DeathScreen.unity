@@ -181,8 +181,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f9b94a569dca040a045202ba8402a3, type: 2}
-  m_sharedMaterial: {fileID: -3498500585590815816, guid: 15f9b94a569dca040a045202ba8402a3,
+  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_sharedMaterial: {fileID: 1193035929608385730, guid: d183f2a4d1ced164f86c40fd703fabc3,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -315,8 +315,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAY AGAIN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f9b94a569dca040a045202ba8402a3, type: 2}
-  m_sharedMaterial: {fileID: -3498500585590815816, guid: 15f9b94a569dca040a045202ba8402a3,
+  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_sharedMaterial: {fileID: 1193035929608385730, guid: d183f2a4d1ced164f86c40fd703fabc3,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -593,8 +593,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OPTIONS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f9b94a569dca040a045202ba8402a3, type: 2}
-  m_sharedMaterial: {fileID: -3498500585590815816, guid: 15f9b94a569dca040a045202ba8402a3,
+  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_sharedMaterial: {fileID: 1193035929608385730, guid: d183f2a4d1ced164f86c40fd703fabc3,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1249,8 +1249,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f9b94a569dca040a045202ba8402a3, type: 2}
-  m_sharedMaterial: {fileID: -3498500585590815816, guid: 15f9b94a569dca040a045202ba8402a3,
+  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_sharedMaterial: {fileID: 1193035929608385730, guid: d183f2a4d1ced164f86c40fd703fabc3,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1855,8 +1855,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: YOU DIED
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f9b94a569dca040a045202ba8402a3, type: 2}
-  m_sharedMaterial: {fileID: -3498500585590815816, guid: 15f9b94a569dca040a045202ba8402a3,
+  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_sharedMaterial: {fileID: 1193035929608385730, guid: d183f2a4d1ced164f86c40fd703fabc3,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

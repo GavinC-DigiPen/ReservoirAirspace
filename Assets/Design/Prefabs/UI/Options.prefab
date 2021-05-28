@@ -437,9 +437,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Master Volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f9b94a569dca040a045202ba8402a3, type: 2}
-  m_sharedMaterial: {fileID: -3498500585590815816, guid: 15f9b94a569dca040a045202ba8402a3,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -645,7 +644,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: OPTIONS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f9b94a569dca040a045202ba8402a3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -994,9 +993,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Effects Volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f9b94a569dca040a045202ba8402a3, type: 2}
-  m_sharedMaterial: {fileID: -3498500585590815816, guid: 15f9b94a569dca040a045202ba8402a3,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1129,9 +1127,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Music Volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f9b94a569dca040a045202ba8402a3, type: 2}
-  m_sharedMaterial: {fileID: -3498500585590815816, guid: 15f9b94a569dca040a045202ba8402a3,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1373,7 +1370,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: BACK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f9b94a569dca040a045202ba8402a3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d183f2a4d1ced164f86c40fd703fabc3, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
