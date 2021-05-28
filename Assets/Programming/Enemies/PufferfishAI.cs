@@ -24,6 +24,8 @@ public class PufferfishAI : MonoBehaviour
     [Tooltip("Maximum speed of pufferfish")]
     public float MaxPufferfishSpeed = 2;
 
+    [Tooltip("Explosion sound")]
+    public AudioClip ExplosionSound;
     [Tooltip("Prefab for the spines")]
     public GameObject Spine;
     [Tooltip("Number of spines to spawn in")]
@@ -35,6 +37,7 @@ public class PufferfishAI : MonoBehaviour
     private Transform mTransform;
     private Rigidbody2D body;
     private Animator PlayerAnim;
+    private AudioSource myAudio;
 
     private bool Exploding = false;
 
@@ -46,6 +49,7 @@ public class PufferfishAI : MonoBehaviour
         mTransform = GetComponent<Transform>();
         body = GetComponent<Rigidbody2D>();
         PlayerAnim = GetComponent<Animator>();
+        myAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -117,6 +121,10 @@ public class PufferfishAI : MonoBehaviour
 
     private void SpawnSpines()
     {
+        //audio
+        myAudio.clip = ExplosionSound;
+        myAudio.Play();
+
         //spawn spines
         for (int i = 0; i < NumberOfSpines; i++)
         {

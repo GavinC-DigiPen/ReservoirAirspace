@@ -34,7 +34,7 @@ public class PlayerAnimatorController : MonoBehaviour
     public void ChangeGoldfishHurt()
     {
         PlayerAnim.SetBool("GoldfishHurt", true);
-        Invoke("UnHurtGoldfish", PlayerLives.ImmuneTime);
+        Invoke("UnHurtGoldfish", PlayerLives.ImmuneTime/2);
     }
 
     // Unhurt goldfish
