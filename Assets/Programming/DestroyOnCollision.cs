@@ -16,19 +16,29 @@ using UnityEngine;
 public class DestroyOnCollision : MonoBehaviour
 {
     public float Delay = 0;
+    public bool MakeInvisible = true;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        var Renderer = GetComponent<SpriteRenderer>();
-        if (Renderer != null)
+        if (MakeInvisible)
         {
-            Renderer.enabled = false;
+            var Renderer = GetComponent<SpriteRenderer>();
+            if (Renderer != null)
+            {
+                Renderer.enabled = false;
+            }
         }
 
-        var Collider = GetComponent<CircleCollider2D>();
-        if (Collider != null)
+        var CircleCollider = GetComponent<CircleCollider2D>();
+        if (CircleCollider != null)
         {
-            Collider.enabled = false;
+            CircleCollider.enabled = false;
+        }
+
+        var BoxCollider = GetComponent<BoxCollider2D>();
+        if (BoxCollider != null)
+        {
+            BoxCollider.enabled = false;
         }
 
         Destroy(gameObject, Delay);

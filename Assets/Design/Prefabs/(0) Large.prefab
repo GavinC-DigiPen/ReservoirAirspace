@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -2778174407405668588}
   - component: {fileID: -6793514599948381963}
   - component: {fileID: 3083895694325072981}
+  - component: {fileID: 6323155022006764433}
   m_Layer: 10
   m_Name: (0) Large
   m_TagString: Shark
@@ -161,6 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8e5eceeb27e8f4d94be009148dab28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Delay: 1
+  MakeInvisible: 0
 --- !u!114 &4395161390555021926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,3 +231,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6323155022006764433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6046975222712969571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf20bd79deae11045ba1f39cb23a947d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

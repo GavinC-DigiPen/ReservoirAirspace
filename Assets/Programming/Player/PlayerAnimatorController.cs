@@ -38,7 +38,7 @@ public class PlayerAnimatorController : MonoBehaviour
     }
 
     // Unhurt goldfish
-    public void UnHurtGoldfish()
+    private void UnHurtGoldfish()
     {
         PlayerAnim.SetBool("GoldfishHurt", false);
     }

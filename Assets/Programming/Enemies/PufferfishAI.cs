@@ -34,6 +34,9 @@ public class PufferfishAI : MonoBehaviour
     private GameObject Target;
     private Transform mTransform;
     private Rigidbody2D body;
+    private Animator PlayerAnim;
+
+    private bool Exploding = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +45,7 @@ public class PufferfishAI : MonoBehaviour
         Target = GameObject.FindGameObjectWithTag(TargetTag);
         mTransform = GetComponent<Transform>();
         body = GetComponent<Rigidbody2D>();
+        PlayerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -65,7 +69,10 @@ public class PufferfishAI : MonoBehaviour
         var speed = Random.Range(MinPufferfishSpeed, MaxPufferfishSpeed);
 
         // Move object
-        body.velocity = moveDirection * speed;
+        if (!Exploding)
+        {
+            body.velocity = moveDirection * speed;
+        }
     }
 
     // pufferfish collide
@@ -82,7 +89,7 @@ public class PufferfishAI : MonoBehaviour
     }
 
     // When pufferfish in in range
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if player
         if (collision.gameObject.tag != "Player")
@@ -93,11 +100,24 @@ public class PufferfishAI : MonoBehaviour
         Explode();
     }
 
-    void Explode()
+    private void Explode()
     {
         //turn off hit box
         GetComponent<BoxCollider2D>().enabled = false;
 
+        //stop movement
+        body.velocity = new Vector2(0, 0);
+        Exploding = true;
+
+        //start animation
+        PlayerAnim.SetBool("Explode", true);
+
+        Invoke("SpawnSpines", 1.25f);
+    }
+
+    private void SpawnSpines()
+    {
+        //spawn spines
         for (int i = 0; i < NumberOfSpines; i++)
         {
             // Spawn objet
@@ -115,6 +135,7 @@ public class PufferfishAI : MonoBehaviour
             spawnedObject.gameObject.GetComponent<Rigidbody2D>().velocity = moveDirection * SpineSpeed;
         }
 
-        Destroy(gameObject);
+        // destory self
+        Destroy(gameObject, 2);
     }
 }
