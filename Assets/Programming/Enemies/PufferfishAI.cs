@@ -41,6 +41,7 @@ public class PufferfishAI : MonoBehaviour
 
     private bool Exploding = false;
     private int ObjectSpawnCounter = 0;
+    private bool PlayedSound = false;
 
     // Start is called before the first frame update
     void Start()
@@ -123,7 +124,11 @@ public class PufferfishAI : MonoBehaviour
     private void SpawnSpines()
     {
         //audio
-        Invoke("PlaySound", 0.5f);
+        if (!PlayedSound)
+        {
+            PlayedSound = true;
+            Invoke("PlaySound", 0.1f);
+        }
 
         //spawn spines
         for (; ObjectSpawnCounter < NumberOfSpines; ObjectSpawnCounter++)
